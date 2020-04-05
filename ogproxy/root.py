@@ -7,7 +7,7 @@ from flask import Blueprint, request, render_template, jsonify
 blueprint = Blueprint('root', __name__)
 
 
-def _og_vals(data):
+def _og_values(data):
     soup = bs4.BeautifulSoup(data, features='html.parser')
     r = soup.findAll('meta', {'property': re.compile(r'^og:')})
 
@@ -31,5 +31,5 @@ def stats_all():
 
     return render_template('index.html.j2', ctx={
         'url': target,
-        **_og_vals(req.text)
+        **_og_values(req.text)
     })
