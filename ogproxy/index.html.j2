@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>{{ ctx.title }}</title>
+{% for tag in ctx.tags %}
+    <meta property="{{ tag[0] }}" content="{{ tag[1] }}">
+{% endfor %}
+</head>
+<body>
+<script>
+  window.location.href = "{{ ctx.url }}";
+</script>
+</body>
+</html>
