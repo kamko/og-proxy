@@ -1,9 +1,8 @@
 name: Docker build
 
 on:
-  push:
-    paths:
-      - "!README.md"
+  push
+
 jobs:
   build:
     runs-on: ubuntu-latest
